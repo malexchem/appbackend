@@ -16,7 +16,8 @@ router.get("/", async (req, res) => {
     const allRecords = response.data;
 
     // Paginate locally
-    const paginated = allRecords.slice(startIndex, startIndex + limit);
+    const paginated = allRecords.reverse().slice(startIndex, startIndex + limit);
+    // const paginated = allRecords.slice(startIndex, startIndex + limit);
 
     res.status(200).json({
       success: true,
